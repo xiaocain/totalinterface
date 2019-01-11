@@ -1,0 +1,44 @@
+
+mybatis:
+#  config-location: classpath:config/mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.jcex.totalinterface.Entity
+
+spring:
+  datasource:
+#    数据源驱动
+#    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rm-bp1yn1lit508lah4l.mysql.rds.aliyuncs.com:3306/jctms33
+    username: jctmsusername
+    password: yun2018@jcex
+#    初始化连接数量
+    initialSize: 20
+#    最小空闲连接数
+    minIdle: 20
+#    最大活跃连接数
+    maxActive: 200
+#    连接等待超时的时间，单位毫秒 设置了30天
+    maxWait: 2592000
+#    超过时间限制是否回收
+    removeAbandoned: true
+#    超过多长时间关闭链接，单位秒
+    removeAbandonedTimeout: 120
+#    将当前动作记录到日志
+    logAbandoned: true
+#    池中的连接空闲30分钟后被回收 单位毫秒
+    timeBetweenEvictionRunsMillis: 1800000
+#    配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒,这里120秒检测一次
+    minEvictableIdleTimeMillis: 120000
+#    验证使用的SQL语句
+    validationQuery: select 1
+#    指明连接是否被空闲连接回收器(如果有)进行检验.如果检测失败,则连接将被从池中去除.
+    testWhileIdle: true
+#    指明从连接池拿时是否测试，如果检验失败，则从池中去除连接并尝试取出另一个，开启很影响性能，但是不开启可能会触发连接被回收了 还在使用 导致异常，可根据自己项目选择是否开启
+    testOnBorrow: false
+#    指明是否在归还到池中前进行检验
+    testOnReturn: false
+    filters: stat
+#    是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
+    poolPreparedStatements: false
+#    preparedStatement大小。
+    maxPoolPreparedStatementPerConnectionSize: 100

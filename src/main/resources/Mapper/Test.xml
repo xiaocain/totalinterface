@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jcex.totalinterface.Dao.Test">
+
+
+    <select id="selectwishbillno" resultType="String">
+        select a.shipper_hawbcode from bsn_expressexport a
+        INNER JOIN bsn_business c on a.bs_id= c.bs_id
+        left join wishztb b on a.shipper_hawbcode=b.billno
+        WHERE a.customer_reference_number LIKE 'WOSP%' AND (IFNULL(b.jccode_one,'') = '' OR b.jccode_one != 10)
+        and c.operation_status != 'E'
+        and IFNULL(c.primary_bs_id,0) = 0
+    </select>
+
+</mapper>

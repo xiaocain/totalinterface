@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jcex.totalinterface.Dao.csd_invoiceDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.jcex.totalinterface.Entity.csd_invoice">
+        <result column="invoice_id" property="invoice_id"/>
+        <result column="order_id" property="order_id"/>
+        <result column="sku" property="sku"/>
+        <result column="invoice_cnname" property="invoice_cnname"/>
+        <result column="invoice_enname" property="invoice_enname"/>
+        <result column="unit_code" property="unit_code"/>
+        <result column="invoice_quantity" property="invoice_quantity"/>
+        <result column="invoice_totalcharge" property="invoice_totalcharge"/>
+        <result column="invoice_currencycode" property="invoice_currencycode"/>
+        <result column="hs_code" property="hs_code"/>
+        <result column="invoice_note" property="invoice_note"/>
+        <result column="invoice_url" property="invoice_url"/>
+        <result column="invoice_info" property="invoice_info"/>
+        <result column="categories_id" property="categories_id"/>
+        <result column="net_weight" property="net_weight"/>
+        <result column="invoice_material" property="invoice_material"/>
+        <result column="invoice_spec" property="invoice_spec"/>
+        <result column="invoice_use" property="invoice_use"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        invoice_id,
+        order_id,
+        sku,
+        invoice_cnname,
+        invoice_enname,
+        unit_code,
+        invoice_quantity,
+        invoice_totalcharge,
+        invoice_currencycode,
+        hs_code,
+        invoice_note,
+        invoice_url,
+        invoice_info,
+        categories_id,
+        net_weight,
+        invoice_material,
+        invoice_spec,
+        invoice_use
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO csd_invoice
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.invoice_id != null"> invoice_id, </if>
+            <if test="pojo.order_id != null"> order_id, </if>
+            <if test="pojo.sku != null"> sku, </if>
+            <if test="pojo.invoice_cnname != null"> invoice_cnname, </if>
+            <if test="pojo.invoice_enname != null"> invoice_enname, </if>
+            <if test="pojo.unit_code != null"> unit_code, </if>
+            <if test="pojo.invoice_quantity != null"> invoice_quantity, </if>
+            <if test="pojo.invoice_totalcharge != null"> invoice_totalcharge, </if>
+            <if test="pojo.invoice_currencycode != null"> invoice_currencycode, </if>
+            <if test="pojo.hs_code != null"> hs_code, </if>
+            <if test="pojo.invoice_note != null"> invoice_note, </if>
+            <if test="pojo.invoice_url != null"> invoice_url, </if>
+            <if test="pojo.invoice_info != null"> invoice_info, </if>
+            <if test="pojo.categories_id != null"> categories_id, </if>
+            <if test="pojo.net_weight != null"> net_weight, </if>
+            <if test="pojo.invoice_material != null"> invoice_material, </if>
+            <if test="pojo.invoice_spec != null"> invoice_spec, </if>
+            <if test="pojo.invoice_use != null"> invoice_use, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.invoice_id != null"> #{pojo.invoice_id}, </if>
+            <if test="pojo.order_id != null"> #{pojo.order_id}, </if>
+            <if test="pojo.sku != null"> #{pojo.sku}, </if>
+            <if test="pojo.invoice_cnname != null"> #{pojo.invoice_cnname}, </if>
+            <if test="pojo.invoice_enname != null"> #{pojo.invoice_enname}, </if>
+            <if test="pojo.unit_code != null"> #{pojo.unit_code}, </if>
+            <if test="pojo.invoice_quantity != null"> #{pojo.invoice_quantity}, </if>
+            <if test="pojo.invoice_totalcharge != null"> #{pojo.invoice_totalcharge}, </if>
+            <if test="pojo.invoice_currencycode != null"> #{pojo.invoice_currencycode}, </if>
+            <if test="pojo.hs_code != null"> #{pojo.hs_code}, </if>
+            <if test="pojo.invoice_note != null"> #{pojo.invoice_note}, </if>
+            <if test="pojo.invoice_url != null"> #{pojo.invoice_url}, </if>
+            <if test="pojo.invoice_info != null"> #{pojo.invoice_info}, </if>
+            <if test="pojo.categories_id != null"> #{pojo.categories_id}, </if>
+            <if test="pojo.net_weight != null"> #{pojo.net_weight}, </if>
+            <if test="pojo.invoice_material != null"> #{pojo.invoice_material}, </if>
+            <if test="pojo.invoice_spec != null"> #{pojo.invoice_spec}, </if>
+            <if test="pojo.invoice_use != null"> #{pojo.invoice_use}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO csd_invoice(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.invoice_id},
+            #{pojo.order_id},
+            #{pojo.sku},
+            #{pojo.invoice_cnname},
+            #{pojo.invoice_enname},
+            #{pojo.unit_code},
+            #{pojo.invoice_quantity},
+            #{pojo.invoice_totalcharge},
+            #{pojo.invoice_currencycode},
+            #{pojo.hs_code},
+            #{pojo.invoice_note},
+            #{pojo.invoice_url},
+            #{pojo.invoice_info},
+            #{pojo.categories_id},
+            #{pojo.net_weight},
+            #{pojo.invoice_material},
+            #{pojo.invoice_spec},
+            #{pojo.invoice_use}
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE csd_invoice
+        <set>
+            <if test="pojo.invoice_id != null"> invoice_id = #{pojo.invoice_id}, </if>
+            <if test="pojo.order_id != null"> order_id = #{pojo.order_id}, </if>
+            <if test="pojo.sku != null"> sku = #{pojo.sku}, </if>
+            <if test="pojo.invoice_cnname != null"> invoice_cnname = #{pojo.invoice_cnname}, </if>
+            <if test="pojo.invoice_enname != null"> invoice_enname = #{pojo.invoice_enname}, </if>
+            <if test="pojo.unit_code != null"> unit_code = #{pojo.unit_code}, </if>
+            <if test="pojo.invoice_quantity != null"> invoice_quantity = #{pojo.invoice_quantity}, </if>
+            <if test="pojo.invoice_totalcharge != null"> invoice_totalcharge = #{pojo.invoice_totalcharge}, </if>
+            <if test="pojo.invoice_currencycode != null"> invoice_currencycode = #{pojo.invoice_currencycode}, </if>
+            <if test="pojo.hs_code != null"> hs_code = #{pojo.hs_code}, </if>
+            <if test="pojo.invoice_note != null"> invoice_note = #{pojo.invoice_note}, </if>
+            <if test="pojo.invoice_url != null"> invoice_url = #{pojo.invoice_url}, </if>
+            <if test="pojo.invoice_info != null"> invoice_info = #{pojo.invoice_info}, </if>
+            <if test="pojo.categories_id != null"> categories_id = #{pojo.categories_id}, </if>
+            <if test="pojo.net_weight != null"> net_weight = #{pojo.net_weight}, </if>
+            <if test="pojo.invoice_material != null"> invoice_material = #{pojo.invoice_material}, </if>
+            <if test="pojo.invoice_spec != null"> invoice_spec = #{pojo.invoice_spec}, </if>
+            <if test="pojo.invoice_use != null"> invoice_use = #{pojo.invoice_use} </if>
+        </set>
+         WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM csd_invoice
+        <where>
+            <if test="pojo.invoice_id != null"> AND invoice_id = #{pojo.invoice_id} </if>
+            <if test="pojo.order_id != null"> AND order_id = #{pojo.order_id} </if>
+            <if test="pojo.sku != null"> AND sku = #{pojo.sku} </if>
+            <if test="pojo.invoice_cnname != null"> AND invoice_cnname = #{pojo.invoice_cnname} </if>
+            <if test="pojo.invoice_enname != null"> AND invoice_enname = #{pojo.invoice_enname} </if>
+            <if test="pojo.unit_code != null"> AND unit_code = #{pojo.unit_code} </if>
+            <if test="pojo.invoice_quantity != null"> AND invoice_quantity = #{pojo.invoice_quantity} </if>
+            <if test="pojo.invoice_totalcharge != null"> AND invoice_totalcharge = #{pojo.invoice_totalcharge} </if>
+            <if test="pojo.invoice_currencycode != null"> AND invoice_currencycode = #{pojo.invoice_currencycode} </if>
+            <if test="pojo.hs_code != null"> AND hs_code = #{pojo.hs_code} </if>
+            <if test="pojo.invoice_note != null"> AND invoice_note = #{pojo.invoice_note} </if>
+            <if test="pojo.invoice_url != null"> AND invoice_url = #{pojo.invoice_url} </if>
+            <if test="pojo.invoice_info != null"> AND invoice_info = #{pojo.invoice_info} </if>
+            <if test="pojo.categories_id != null"> AND categories_id = #{pojo.categories_id} </if>
+            <if test="pojo.net_weight != null"> AND net_weight = #{pojo.net_weight} </if>
+            <if test="pojo.invoice_material != null"> AND invoice_material = #{pojo.invoice_material} </if>
+            <if test="pojo.invoice_spec != null"> AND invoice_spec = #{pojo.invoice_spec} </if>
+            <if test="pojo.invoice_use != null"> AND invoice_use = #{pojo.invoice_use} </if>
+        </where>
+        LIMIT 1000 
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM csd_invoice where id = #{id}
+    </delete>
+</mapper>
